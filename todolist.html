@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--<script async src="todolist.js"></script>-->
-    <script async src="wlaalang.js"></script>
+    <script  src="wlaalang.js" async></script>
     <link rel="stylesheet" href="style.css">
     <title>TODO LIST</title>
 </head>
+
 <body>
-    <section >
-        <div class="title">
-            To Do List
-        </div>
-        <div class="content">
-            <ol id='task-list'>  
-                    <li>asdasd </li><button class="remove-btn">remove0</button>
-            </ol>
-        </div>
-        <div class="new-task">
-            <label for="task">new task</label>
-            <input type="text" id="add-task" required>
-            <button id="submitBtn">submit task</button>
-        </div>
+    <section class="outer-section">
+        <section class='inner-section'>
+            <div class="title header">
+                To Do List
+            </div>
+            <div class="new-task">
+                <label for="task">NEW TASK</label>
+                <input type="text" id="add-task" required>
+                <button id="submit-btn">submit task</button>
+            </div>
+            <div class="content">
+                <ol id='task-list'>
+                </ol>
+            </div>
+            
+        </section>
     </section>
 </body>
+
 </html>

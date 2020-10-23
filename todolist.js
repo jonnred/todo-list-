@@ -3,7 +3,7 @@ const content = document.querySelectorAll('.content');
 const taskList = document.querySelector('#task-list');
 
 ////////////  TODOS   ///////////////
-var todos = ["1" , "2" ,"5"];   
+var todos = ["Complete this todo List" , "Complete the Shoping Website In javascript" ,"Learn how to connect The Todo list In Node Js "];   
 ////////////========1.  TODO LIST   ========///////////////
 const todolist = () => {
 }
