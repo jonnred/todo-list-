@@ -1,42 +1,37 @@
 const taskList = document.querySelector('#task-list');
 
-let task = ["Complete this todo List", "Complete the Shoping Website In javascript", "Learn how to connect The Todo list In Node Js "];
 
 ///////////========== MAIN FUNCTION  ==========///////////
 
 
-///////////========== TODO LIST  ==========///////////
-
-    for (let index = 0; index < task.length; index++) {
-        let li = document.createElement('li')
-        li.innerText = task[index];
-        let removeBtn = document.createElement('button')
-        removeBtn.classList.add('remove-btn')
-        removeBtn.innerText = 'Remove';
-        li.classList.add('list')
-        taskList.appendChild(li);
-        li.appendChild(removeBtn);
-    }
 
 ///////////========== ADD NEWW TASK  ==========///////////
 const submitBtn = document.querySelector('#submit-btn');
+
+const addTaskFunction = () => {
 addTask = document.querySelector('#add-task')
 submitBtn.addEventListener('click', () => {
-    task.push(addTask.value);
+    if(addTask.value == 0){
+        return;
+    }
+    else{
 
-    let li = document.createElement('li')
+        let li = document.createElement('li')
         li.innerText = addTask.value;
         let removeBtn = document.createElement('button')
         removeBtn.classList.add('remove-btn')
         removeBtn.innerText = 'Remove';
+        removeBtn.addEventListener('click',(e) => {
+            e.target.parentElement.remove();
+        });
         li.classList.add('list')
         taskList.appendChild(li);
         li.appendChild(removeBtn);
         addTask.value = null;
-        console.log(task);
-        removeTaskFunction();
-
+        return;
+    }
 })
+}
 
 ///////////==========  REMOVE TASK  ==========///////////
 const removeButton = document.querySelectorAll('.remove-btn');
@@ -48,6 +43,7 @@ const removeTaskFunction = () => {
         });
     }
 }
+addTaskFunction();
 removeTaskFunction();
 ///////////==========   ==========///////////
 ///////////==========   ==========///////////
