@@ -1,13 +1,16 @@
 *{
     box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 body{
     height:100vh;
+    margin: 20px;
+    background: radial-gradient(rgb(2, 205, 231) , #999) ;
 }
 .header{
     font-size:24px;
     font-weight: 900;
-    background-color: rgb(156, 0, 0);
+
 }
 #task-list{
     max-width: 400px;
@@ -26,7 +29,7 @@ body{
     color: white;
     border:none;
     cursor: pointer;
-    padding:5px
+    padding:5px;
 }
 #task-list button:hover{
     background-color: rgb(156, 0, 0);
@@ -37,22 +40,23 @@ body{
     align-self: center;
     margin:auto;
     padding: 20px;
-    background-color: #999;
+    background-color: rgb(201, 202, 113);
     height: auto;
     min-height: 80vh;
+    border-radius: 20px;
+    border: 10px dashed rgb(160, 161, 91);
 }
 .outer-section{
-    
 }
 .content{
-    background-color: #999;
+    
 }
 .remove-btn{
     float: right;
 }
 .list{
     max-width: 300px;
-    border-bottom: 1px dashed #333;
+    border-bottom: 1px dashed #777;
 }
 .new-task{
     margin: 10px 0;
