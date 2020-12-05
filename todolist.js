@@ -1,44 +1,67 @@
-const removeBtn = document.getElementsByClassName('remove-btn');
-const content = document.querySelectorAll('.content');
 const taskList = document.querySelector('#task-list');
 
-////////////  TODOS   ///////////////
-var todos = ["Complete this todo List" , "Complete the Shoping Website In javascript" ,"Learn how to connect The Todo list In Node Js "];   
-////////////========1.  TODO LIST   ========///////////////
-const todolist = () => {
-}
-todolist();
-///////////=====2. TO DO LIST CLASS=====/////////////////
-const todoListClass = () => {
-    document.querySelector('content')
-    for (let i = 0; i < todos.length; i++) {
-        let element = todos[i];
-        let li = document.createElement('li');
-        taskList.appendChild(li);
-        li.
-        taskList.textContent = todos[i];
-        console.log(element);
-        
-        
+
+///////////========== MAIN FUNCTION  ==========///////////
+
+
+
+///////////========== ADD NEWW TASK  ==========///////////
+const submitBtn = document.querySelector('#submit-btn');
+
+const addTaskFunction = () => {
+addTask = document.querySelector('#add-task')
+submitBtn.addEventListener('click', () => {
+    if(addTask.value == 0){
+        return;
     }
-    
-    
-    console.log('todo list class ');
-
+    else{
+        addingElements();
+    }
+})
 }
-todoListClass();
-/////////////=====3. ADD NEW TASK=====//////////////
-const submitBtn = document.querySelector("#submitBtn");
-const addTask = document.querySelector('#addTask');
 
-const addNewTask = () => {
-    if (addTask.value == null)alert("asd");
-    if (addTask.value != null){
-        todos.push(addTask.value);
-        addTask.value = null ;
-        console.log(todos)
-    };
-    
-
+///////////==========  REMOVE TASK  ==========///////////
+const removeButton = document.querySelectorAll('.remove-btn');
+const removeTaskFunction = () => {
+    for (let index = 0; index < removeButton.length; index++) {
+        let element = removeButton[index];
+        element.addEventListener('click', (e) => {
+            e.target.parentElement.remove();
+        });
+    }
 }
-submitBtn.addEventListener('click' , addNewTask);
+///////////========== UPDATE THE LIST  ==========///////////
+
+const update = () => {
+
+    for (let index = 0; index < localStorage.length; index++) {
+        const key = localStorage.key(index);
+        const value = localStorage.getItem(key);
+
+    }
+}
+const addingElements = () => {
+    localStorageFunction();
+    let li = document.createElement('li')
+    li.innerText = addTask.value;
+    let removeBtn = document.createElement('button')
+    removeBtn.classList.add('remove-btn')
+    removeBtn.innerText = 'Remove';
+    removeBtn.addEventListener('click',(e) => {
+        e.target.parentElement.remove();
+    });
+    li.classList.add('list')
+    taskList.appendChild(li);
+    li.appendChild(removeBtn);
+    addTask.value = null;   
+    return;
+}
+const localStorageFunction = () => {
+    localStorage.setItem("todoList", addTask.value);
+    const key = localStorage.key(0)
+    console.log(localStorage.getItem(key))
+}
+update();
+addTaskFunction();
+removeTaskFunction();
+///////////==========   ==========///////////
